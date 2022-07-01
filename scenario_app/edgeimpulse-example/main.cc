@@ -126,10 +126,10 @@ unsigned long RespondToDetection(int8_t *score)
             maxindex = i;
         }
     }
-    hx_drv_uart_print("[Human] %d, [None] %d [Cat] %d \n", score[0], score[1], score[2]);
+    hx_drv_uart_print("[pet] %d, [Human] %d [None] %d \n", score[0], score[1], score[2]);
 
     uint32_t cat;
-    if (maxindex == 2) {
+    if (maxindex == 0) {
         hx_drv_led_on(HX_DRV_LED_GREEN);
         hx_drv_led_off(HX_DRV_LED_RED);
         cat = 0;
